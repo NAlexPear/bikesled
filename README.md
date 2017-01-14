@@ -27,4 +27,6 @@ Inspired by Pattern Lab's atomic-design principles, Bikesled greases the runners
     ```
 + Bikesled will output an HTML document that contains all of your documentation. It's up to you how to serve that document.
 + Bikesled works with your project's pre-existing module structure! All you need to do is configure which modules to import, and Bikesled will use the resources available in your project to build your documentation.
-+ Configure Bikesled with a `.bikesledrc` file in your project's root directory.
++ Configure Bikesled with a `.bikesledrc` file in your project's root directory. Point to modules that already exist in your project, or point to a module directory filled with custom modules, annotations, and data.
++ Working with a specific framework? Check out the Bikesled plug-ins for the following frameworks:
+    + Backbone
