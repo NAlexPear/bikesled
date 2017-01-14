@@ -1,10 +1,11 @@
 {
-    "output": "./index.html",
+    "output": "./docs",
     "title": "Bikesled Documentation",
     "components": {
         "main": "./components",
         "backbone": "./scripts/backboneView",
         "vanilla": "./scripts/vanillaConstructor"
     },
-    "css": "style.css"
+    "css": "style.css",
+    "inline": false
 }

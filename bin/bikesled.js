@@ -6,7 +6,7 @@ runner
     .arguments( "<action>" )
     .option(
         "-c --configure <config>",
-        "path to .bikesledrc configuration file"
+        "Specify path to .bikesledrc configuration file"
     )
     .action(
         ( action ) => console.log( `You asked bikesled to ${action}` )
