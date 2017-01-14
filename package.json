@@ -1,0 +1,11 @@
+{
+  "name": "bikesled",
+  "version": "0.1.0",
+  "description": "Build component-based documentation for any client-side resource in your web project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alex Pearson",
+  "license": "MIT"
+}
