@@ -20,11 +20,11 @@ Inspired by Pattern Lab's atomic-design principles, Bikesled greases the runners
     ```shell
     npm install bikesled
     ```
-+ Bikesled follows the [Universal Module Definition specification](https://github.com/umdjs/umd). This means that you can `import`, `require`, or directly link Bikesled into your documentation page.
-+ Bikesled will create your documentation as a single-page application with the following commands:
++ Bikesled is run as a command-line utility. Compile your documentation with:
 
+    ```shell
+    bikesled build
     ```
-    var bikesled = new Bikesled();
-
-    bikesled.render();
-    ```
++ Bikesled will output an HTML document that contains all of your documentation. It's up to you how to serve that document.
++ Bikesled works with your project's pre-existing module structure! All you need to do is configure which modules to import, and Bikesled will use the resources available in your project to build your documentation.
++ Configure Bikesled with a `.bikesledrc` file in your project's root directory.
