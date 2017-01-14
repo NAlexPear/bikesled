@@ -1,0 +1,9 @@
+{
+    "output": "./docs",
+    "title": "Bikesled Documentation",
+    "components": {
+        "main": "./components"
+    },
+    "css": "style.css",
+    "inline": false
+}

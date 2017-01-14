@@ -4,9 +4,26 @@
 var runner = require( "commander" );
 var bikesled = require( "../index.js" );
 
-function parseAction( action ){
+function parseOptions( opts ){
+    return opts.options
+        .map(
+            ( option ) => option.long.replace( "--", "" )
+        )
+        .reduce(
+            ( acc, key ) => {
+                acc[ key ] = opts[ key ];
+
+                return acc;
+            },
+            {}
+        );
+}
+
+function parseAction( action, options ){
+    options = parseOptions( options );
+
     if( bikesled[ action ] ){
-        bikesled[ action ]();
+        bikesled[ action ]( options );
     }
     else{
         console.log( "Please input a valid bikesled command!" );
