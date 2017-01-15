@@ -1,21 +1,23 @@
-<section>
-    <div class="bikesled-component">
-        <h2><%= name %></h2>
-    </div>
-    <div class="bikesled-component">
-        <h3>HTML:</h3>
-        <pre><code><%= input %></code></pre>
-    </div>
-    <div class="bikesled-component">
-        <h3>Notes:</h3>
-        <div>
-            <%= annotations %>
-        </div>
-    </div>
-    <div class="bikesled-component">
-        <hr>
-    </div>
+<div class="bikesled-component">
+    <h2><%= name %></h2>
+</div>
+<div class="bikesled-component">
+    <h3>HTML:</h3>
+    <pre><code><%= input %></code></pre>
+</div>
+<div class="bikesled-component">
+    <h3>Notes:</h3>
     <div>
-        <%= output %>
+        <ol>
+            <% annotations.forEach( ( annotation) => { %>
+                <li><%= annotation %></li>
+            <% } ); %>
+        </ol>
     </div>
-</section>
+</div>
+<div class="bikesled-component">
+    <h3>Component: </h3>
+</div>
+<div>
+    <%= output %>
+</div>

@@ -1,33 +1,36 @@
 @import "variables";
 
-.bikesled-component{
-    @import "normalize";
+#bikesled-container{
+    .bikesled-component{
+        @import "reset";
+        @import "normalize";
 
-    font-family: "Helvetica", sans-serif;
+        font-family: "Helvetica", sans-serif;
 
-    > h1,
-    > h2,
-    > h3,
-    > h4
-    {
-        color: $color-accent-dark;
-    }
-
-    > pre {
-        padding: 1rem;
-        box-shadow: 0 0.15rem 0.3rem $color-shadow;
-        background-color: $color-background-subtle;
-        overflow-y: auto;
-
-        > code {
-            @import "highlight";
+        > h1,
+        > h2,
+        > h3,
+        > h4
+        {
+            color: $color-accent-dark;
         }
-    }
 
-    > hr {
-        opacity: 0.5;
-        height: 0.1rem;
-        border: none;
-        background-color: $color-shadow;
+        > pre {
+            padding: 1rem;
+            box-shadow: 0 0.15rem 0.3rem $color-shadow;
+            background-color: $color-background-subtle;
+            overflow-y: auto;
+
+            > code {
+                @import "highlight";
+            }
+        }
+
+        > hr {
+            opacity: 0.5;
+            height: 0.1rem;
+            border: none;
+            background-color: $color-shadow;
+        }
     }
 }
