@@ -75,17 +75,18 @@
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_underscore___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_underscore__);
 
 
-var template = "<h4><%= title %></h4>";
+var template = "<h4><%= title %></h4><p><%= prompt %></p>";
 
-function complexExample( title ){
+function complexExample( title = "placeholder title", prompt = "placeholder prompt" ){
     var html = __WEBPACK_IMPORTED_MODULE_0_underscore___default.a.template( template )( {
-        "title": title
+        "title": title,
+        "prompt": prompt
     } );
 
     return html;
 }
 
-/* unused harmony default export */ var _unused_webpack_default_export = complexExample( "Vanilla JS" );
+/* harmony default export */ __webpack_exports__["a"] = complexExample;
 
 
 /***/ }),
@@ -1650,7 +1651,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;//     Underscor
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__home_alex_Code_open_source_bikesled_example_components_more_complex_example__ = __webpack_require__(0);
-
+document.getElementById("more-complex-example").innerHTML=__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__home_alex_Code_open_source_bikesled_example_components_more_complex_example__["a" /* default */])();
 
 /***/ })
 /******/ ]);

@@ -90,17 +90,18 @@ bikesled.build();
     <h3>Input:</h3>
     <pre><code><span class="hljs-keyword">import</span> _ <span class="hljs-keyword">from</span> <span class="hljs-string">"underscore"</span>;
 
-<span class="hljs-keyword">var</span> template = <span class="hljs-string">"&lt;h4&gt;&lt;%= title %&gt;&lt;/h4&gt;"</span>;
+<span class="hljs-keyword">var</span> template = <span class="hljs-string">"&lt;h4&gt;&lt;%= title %&gt;&lt;/h4&gt;&lt;p&gt;&lt;%= prompt %&gt;&lt;/p&gt;"</span>;
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">complexExample</span>(<span class="hljs-params"> title </span>)</span>{
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">complexExample</span>(<span class="hljs-params"> title = <span class="hljs-string">"placeholder title"</span>, prompt = <span class="hljs-string">"placeholder prompt"</span> </span>)</span>{
     <span class="hljs-keyword">var</span> html = _.template( template )( {
-        <span class="hljs-string">"title"</span>: title
+        <span class="hljs-string">"title"</span>: title,
+        <span class="hljs-string">"prompt"</span>: prompt
     } );
 
     <span class="hljs-keyword">return</span> html;
 }
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> complexExample( <span class="hljs-string">"Vanilla JS"</span> );
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> complexExample;
 </code></pre>
 </div>
 <div class="bikesled-component">
@@ -118,7 +119,7 @@ bikesled.build();
     <h3>Output: </h3>
 </div>
 <div>
-    
+    <div id="more-complex-example"></div>
 </div>
 
     </div>
