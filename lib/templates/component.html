@@ -3,12 +3,19 @@
         <h2><%= name %></h2>
     </div>
     <div class="bikesled-component">
+        <h3>HTML:</h3>
         <pre><code><%= input %></code></pre>
+    </div>
+    <div class="bikesled-component">
+        <h3>Notes:</h3>
+        <div>
+            <%= annotations %>
+        </div>
+    </div>
+    <div class="bikesled-component">
+        <hr>
     </div>
     <div>
         <%= output %>
-    </div>
-    <div class="bikesled-component">
-        <%= annotations %>
     </div>
 </section>

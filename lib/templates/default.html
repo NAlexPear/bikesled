@@ -10,7 +10,9 @@
         <%= styles %>
     <% } %>
 
-    <link rel="stylesheet" href="<%= stylesheet %>">
+    <% if( stylesheet ) { %>
+        <link rel="stylesheet" href="style.css">
+    <% } %>
 </head>
 <body>
     <%= rendered %>
