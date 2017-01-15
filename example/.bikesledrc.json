@@ -6,6 +6,6 @@
         "backbone": "./scripts/backboneView",
         "vanilla": "./scripts/vanillaConstructor"
     },
-    "css": "style.css",
+    "stylesheet": "style.css",
     "inline": false
 }

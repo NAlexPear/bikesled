@@ -38,6 +38,10 @@ runner
         "-c --configure <config>",
         "Specify path to .bikesledrc configuration file"
     )
+    .option(
+        "-t --target <target>",
+        "Specify external target directory"
+    )
     .action( parseAction )
     .parse( process.argv );
 
