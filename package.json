@@ -16,9 +16,13 @@
     "commander": "^2.9.0",
     "glob": "^7.1.1",
     "highlightjs": "^9.8.0",
+    "html-loader": "^0.4.4",
+    "json-loader": "^0.5.4",
     "lodash": "^4.17.4",
     "marked": "^0.3.6",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "rimraf": "^2.5.4",
+    "webpack": "^2.2.0-rc.5"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
