@@ -1,6 +1,6 @@
 {
     "output": "./docs",
-    "title": "Bikesled Documentation",
+    "title": "Bikesled Example Documentation",
     "components": {
         "main": "./components",
         "backbone": "./scripts/backboneView",

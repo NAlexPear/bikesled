@@ -6,9 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><%= title %></title>
 
+    <% if( bikesledStyles ) { %>
+        <%= styles %>
+    <% } %>
+
     <link rel="stylesheet" href="<%= stylesheet %>">
 </head>
 <body>
-    <%= components %>
+    <%= rendered %>
 </body>
 </html>
