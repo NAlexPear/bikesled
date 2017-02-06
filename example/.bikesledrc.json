@@ -6,6 +6,10 @@
     },
     "renderers": [
         {
+            "test": "backbone",
+            "src": "./renderers/backbone-view.js"
+        },
+        {
             "test": "\\.js$",
             "src": "./renderers/example-constructor.js"
         }

@@ -1,0 +1,5 @@
+{
+    "title": "Backbone Component",
+    "button": "Click Me!",
+    "countLabel": "Times Clicked: "
+}

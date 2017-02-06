@@ -1,0 +1,1 @@
+This is a simple Backbone view. It depends on a globally-installed jQuery module, which is pulled in automatically through Webpack (you can see that dependency in the `package.json` file in the example project directory.)
