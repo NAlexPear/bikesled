@@ -4812,8 +4812,6 @@ var TestView = __WEBPACK_IMPORTED_MODULE_0_backbone___default.a.View.extend( {
             var $count = this.$( ".count" );
             var value = Number( $count.text() );
 
-            console.log( value );
-
             $count.text( ++value );
         }
     },
