@@ -77,13 +77,15 @@
 
 var template = "<h4><%= title %></h4><p><%= prompt %></p>";
 
-function complexExample( title = "placeholder title", prompt = "placeholder prompt" ){
-    var html = __WEBPACK_IMPORTED_MODULE_0_underscore___default.a.template( template )( {
-        "title": title,
-        "prompt": prompt
-    } );
+function complexExample( data ){
+    var { title, prompt } = data;
 
-    return html;
+    this.template = __WEBPACK_IMPORTED_MODULE_0_underscore___default.a.template( template );
+
+    this.el = this.template( {
+        "title": title || "placeholder title",
+        "prompt": prompt || "placeholder prompt"
+    } );
 }
 
 /* harmony default export */ __webpack_exports__["a"] = complexExample;
@@ -1651,7 +1653,11 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;//     Underscor
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__home_alex_Code_open_source_bikesled_example_components_more_complex_example__ = __webpack_require__(0);
-document.getElementById("more-complex-example").innerHTML=__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__home_alex_Code_open_source_bikesled_example_components_more_complex_example__["a" /* default */])();
+document.getElementById( "more-complex-example" ).innerHTML= new __WEBPACK_IMPORTED_MODULE_0__home_alex_Code_open_source_bikesled_example_components_more_complex_example__["a" /* default */]( {
+    "title": "Vanilla JS",
+    "prompt": "This data came from this component's associated JSON file"
+}
+ ).el;
 
 /***/ })
 /******/ ]);

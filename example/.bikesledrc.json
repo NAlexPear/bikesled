@@ -2,10 +2,14 @@
     "output": "./docs",
     "title": "Bikesled Example Documentation",
     "components": {
-        "main": "./components",
-        "backbone": "./scripts/backboneView",
-        "vanilla": "./scripts/vanillaConstructor"
+        "main": "./components"
     },
+    "renderers": [
+        {
+            "test": "\\.js$",
+            "src": "./renderers/example-constructor.js"
+        }
+    ],
     "stylesheet": "./styles/style.css",
     "inline": false
 }
