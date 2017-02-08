@@ -1,6 +1,6 @@
 {
   "name": "bikesled",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Build component-based documentation for any client-side resource in your web project.",
   "main": "index.js",
   "bin": {
@@ -14,20 +14,20 @@
   "repository": "https://github.com/NAlexPear/bikesled",
   "license": "MIT",
   "dependencies": {
-    "commander": "^2.9.0",
-    "glob": "^7.1.1",
-    "highlightjs": "^9.8.0",
-    "html-loader": "^0.4.4",
-    "json-loader": "^0.5.4",
-    "lodash": "^4.17.4",
-    "marked": "^0.3.6",
-    "path": "^0.12.7",
-    "rimraf": "^2.5.4",
-    "webpack": "^2.2.0-rc.5"
+    "commander": "2.9.0",
+    "glob": "7.1.1",
+    "highlightjs": "9.8.0",
+    "html-loader": "0.4.4",
+    "json-loader": "0.5.4",
+    "lodash": "4.17.4",
+    "marked": "0.3.6",
+    "path": "0.12.7",
+    "rimraf": "2.5.4",
+    "webpack": "2.2.1"
   },
   "devDependencies": {
-    "grunt": "^1.0.1",
-    "grunt-sass": "^2.0.0",
-    "load-grunt-tasks": "^3.5.2"
+    "grunt": "1.0.1",
+    "grunt-sass": "2.0.0",
+    "load-grunt-tasks": "3.5.2"
   }
 }
