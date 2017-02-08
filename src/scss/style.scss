@@ -1,9 +1,97 @@
 @import "variables";
 
+%reset {
+    @import "reset";
+    @import "normalize";
+}
+
+#bikesled-header{
+    @extend %reset;
+
+    width: 100%;
+    height: $size-header;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    background-color: $color-accent-dark;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-sizing: border-box;
+    padding: 1rem;
+
+    .bikesled-title{
+        font-family: sans-serif;
+        color: $color-background-subtle;
+    }
+
+    .bikesled-component-menu{
+        @extend .bikesled-title;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        &:hover{
+            color: $color-background-main;
+        }
+    }
+}
+
+#bikesled-sidebar{
+    @extend %reset;
+
+    height: 100%;
+    width: $size-sidebar;
+
+    position: fixed;
+    top: $size-header;
+    left: -($size-sidebar);
+
+    background-color: lighten( $color-accent-dark, 20 );
+
+    transition: left 0.3s ease;
+
+    &.active{
+        left: 0;
+    }
+
+    ul{
+        padding: 0;
+        margin-top: 0;
+    }
+
+    li{
+        font-family: sans-serif;
+        color: $color-background-subtle;
+        padding: 1rem;
+        border-bottom: 1px solid $color-background-subtle;
+        cursor: pointer;
+
+        &:hover{
+            background-color: lighten( $color-accent-dark, 25 );
+        }
+
+        &.active{
+            background-color: lighten( $color-accent-dark, 30 );
+        }
+    }
+}
+
 #bikesled-container{
+    margin-top: $size-header * 1.5;
+    padding: 0 1.5rem;
+    
+    transition: margin-left 0.3s ease;
+
+    &.active{
+        margin-left: $size-sidebar;
+    }
+
     .bikesled-component{
-        @import "reset";
-        @import "normalize";
+        @extend %reset;
 
         font-family: "Helvetica", sans-serif;
 

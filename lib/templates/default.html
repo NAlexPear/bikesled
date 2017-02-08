@@ -15,10 +15,52 @@
     <% } %>
 </head>
 <body>
+    <nav id="bikesled-header">
+        <h4 class="bikesled-component-menu">menu</h4>
+        <h3 class="bikesled-title"><%= title %></h3>
+    </nav>
+    <div id="bikesled-sidebar">
+        <ul>
+            <% names.forEach( ( name ) => { %>
+                <li><%= name %></li>
+            <% } ); %>
+        </ul>
+    </div>
     <div id="bikesled-container">
         <%= rendered %>
     </div>
-    
+
     <script src="bundle.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        var componentMenuTrigger = document.querySelector( "#bikesled-header .bikesled-component-menu" );
+        var componentMenu = document.getElementById( "bikesled-sidebar" );
+        var container = document.getElementById( "bikesled-container" );
+        var componentMenuItems = document.querySelectorAll( "#bikesled-sidebar li" );
+
+        function toggleComponentMenu(){
+            componentMenu.classList.toggle( "active" );
+            container.classList.toggle( "active" );
+        }
+
+        function activateMenuItems( event ){
+            componentMenuItems.forEach(
+                ( item ) => item.classList.remove( "active" )
+            );
+
+            event.target.classList.add( "active" );
+        }
+
+        componentMenuTrigger.addEventListener(
+            "click",
+            toggleComponentMenu
+        );
+
+        componentMenuItems.forEach(
+            ( item ) => item.addEventListener(
+                "click",
+                activateMenuItems
+            )
+        );
+    </script>
 </body>
 </html>
