@@ -30,6 +30,8 @@
             
                 <li>More Complex Example</li>
             
+                <li>Backbone View With Data</li>
+            
         </ul>
     </div>
     <div id="bikesled-container">
@@ -198,6 +200,47 @@ bikesled.build();
     </div>
     <div>
         <div id="more-complex-example"></div>
+    </div>
+</section>
+<section class="bikesled-component-wrapper" data-bikesled="backbone-view-with-data">
+    <div class="bikesled-component">
+        <h2>Backbone View With Data</h2>
+    </div>
+    <div class="bikesled-component">
+        <h3>Input:</h3>
+        <pre><code><span class="hljs-comment">// Libraries</span>
+<span class="hljs-keyword">import</span> Backbone <span class="hljs-keyword">from</span> <span class="hljs-string">"backbone"</span>;
+
+<span class="hljs-comment">// Internal Components</span>
+
+
+<span class="hljs-keyword">var</span> TestViewWithCollection = Backbone.View.extend( {
+    initialize(){
+        <span class="hljs-keyword">this</span>.render();
+    },
+    render(){
+        <span class="hljs-keyword">this</span>.$el.html( <span class="hljs-string">"&lt;h2&gt;This is a Backbone View&lt;/h2&gt;"</span> );
+
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.$el;
+    }
+} );
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> TestViewWithCollection;
+</code></pre>
+    </div>
+    <div class="bikesled-component">
+        <h3>Notes:</h3>
+        <div>
+            <ol>
+                
+            </ol>
+        </div>
+    </div>
+    <div class="bikesled-component">
+        <h3>Output: </h3>
+    </div>
+    <div>
+        <div id="backbone-view-with-data"></div>
     </div>
 </section>
 
