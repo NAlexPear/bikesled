@@ -33,12 +33,13 @@
         </ul>
     </div>
     <div id="bikesled-container">
-        <div class="bikesled-component">
-    <h2>Backbone View</h2>
-</div>
-<div class="bikesled-component">
-    <h3>Input:</h3>
-    <pre><code><span class="hljs-comment">// Libraries</span>
+        <section class="bikesled-component-wrapper" data-bikesled="backbone-view">
+    <div class="bikesled-component">
+        <h2>Backbone View</h2>
+    </div>
+    <div class="bikesled-component">
+        <h3>Input:</h3>
+        <pre><code><span class="hljs-comment">// Libraries</span>
 <span class="hljs-keyword">import</span> Backbone <span class="hljs-keyword">from</span> <span class="hljs-string">"backbone"</span>;
 
 <span class="hljs-comment">// Lodash Methods</span>
@@ -68,33 +69,35 @@
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> TestView;
 </code></pre>
-</div>
-<div class="bikesled-component">
-    <h3>Notes:</h3>
-    <div>
-        <ol>
-            
-                <li><p>This is a simple Backbone view. It depends on a globally-installed jQuery module, which is pulled in automatically through Webpack (you can see that dependency in the <code>package.json</code> file in the example project directory.)</p>
-</li>
-            
-                <li><p>Click the button to see the event system in action!</p>
-</li>
-            
-        </ol>
     </div>
-</div>
-<div class="bikesled-component">
-    <h3>Output: </h3>
-</div>
-<div>
-    <div id="backbone-view"></div>
-</div>
-<div class="bikesled-component">
-    <h2>Simple Example</h2>
-</div>
-<div class="bikesled-component">
-    <h3>Input:</h3>
-    <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <div class="bikesled-component">
+        <h3>Notes:</h3>
+        <div>
+            <ol>
+                
+                    <li><p>This is a simple Backbone view. It depends on a globally-installed jQuery module, which is pulled in automatically through Webpack (you can see that dependency in the <code>package.json</code> file in the example project directory.)</p>
+</li>
+                
+                    <li><p>Click the button to see the event system in action!</p>
+</li>
+                
+            </ol>
+        </div>
+    </div>
+    <div class="bikesled-component">
+        <h3>Output: </h3>
+    </div>
+    <div>
+        <div id="backbone-view"></div>
+    </div>
+</section>
+<section class="bikesled-component-wrapper" data-bikesled="simple-example">
+    <div class="bikesled-component">
+        <h2>Simple Example</h2>
+    </div>
+    <div class="bikesled-component">
+        <h3>Input:</h3>
+        <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Default Component<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>This is just plain old HTML<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
@@ -109,13 +112,13 @@
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
-</div>
-<div class="bikesled-component">
-    <h3>Notes:</h3>
-    <div>
-        <ol>
-            
-                <li><p>These are basic markdown annotations for <code>simple-example.html</code>.</p>
+    </div>
+    <div class="bikesled-component">
+        <h3>Notes:</h3>
+        <div>
+            <ol>
+                
+                    <li><p>These are basic markdown annotations for <code>simple-example.html</code>.</p>
 <p>This should be a sub-list:</p>
 <ul>
 <li>item 1</li>
@@ -123,22 +126,22 @@
 <li>item 3</li>
 </ul>
 </li>
-            
-                <li><p>This is the second markdown annotation for <code>simple-example.html</code>. Maybe this one can include some JavaScript?</p>
+                
+                    <li><p>This is the second markdown annotation for <code>simple-example.html</code>. Maybe this one can include some JavaScript?</p>
 <pre><code class="lang-javascript">var bikesled = new Bikesled();
 
 bikesled.build();
 </code></pre>
 </li>
-            
-        </ol>
+                
+            </ol>
+        </div>
     </div>
-</div>
-<div class="bikesled-component">
-    <h3>Output: </h3>
-</div>
-<div>
+    <div class="bikesled-component">
+        <h3>Output: </h3>
+    </div>
     <div>
+        <div id="simple-example"><div>
     <h1>Default Component</h1>
     <hr>
     <p>This is just plain old HTML</p>
@@ -152,14 +155,16 @@ bikesled.build();
         </ul>
     </div>
 </div>
-
 </div>
-<div class="bikesled-component">
-    <h2>More Complex Example</h2>
-</div>
-<div class="bikesled-component">
-    <h3>Input:</h3>
-    <pre><code><span class="hljs-keyword">import</span> _ <span class="hljs-keyword">from</span> <span class="hljs-string">"underscore"</span>;
+    </div>
+</section>
+<section class="bikesled-component-wrapper" data-bikesled="more-complex-example">
+    <div class="bikesled-component">
+        <h2>More Complex Example</h2>
+    </div>
+    <div class="bikesled-component">
+        <h3>Input:</h3>
+        <pre><code><span class="hljs-keyword">import</span> _ <span class="hljs-keyword">from</span> <span class="hljs-string">"underscore"</span>;
 
 <span class="hljs-keyword">var</span> template = <span class="hljs-string">"&lt;h4&gt;&lt;%= title %&gt;&lt;/h4&gt;&lt;p&gt;&lt;%= prompt %&gt;&lt;/p&gt;"</span>;
 
@@ -176,24 +181,25 @@ bikesled.build();
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> complexExample;
 </code></pre>
-</div>
-<div class="bikesled-component">
-    <h3>Notes:</h3>
-    <div>
-        <ol>
-            
-                <li><p>This is an example that was built using a Vanilla JavaScript component. The only requirement is that the component returns render-able HTML.</p>
-</li>
-            
-        </ol>
     </div>
-</div>
-<div class="bikesled-component">
-    <h3>Output: </h3>
-</div>
-<div>
-    <div id="more-complex-example"></div>
-</div>
+    <div class="bikesled-component">
+        <h3>Notes:</h3>
+        <div>
+            <ol>
+                
+                    <li><p>This is an example that was built using a Vanilla JavaScript component. The only requirement is that the component returns render-able HTML.</p>
+</li>
+                
+            </ol>
+        </div>
+    </div>
+    <div class="bikesled-component">
+        <h3>Output: </h3>
+    </div>
+    <div>
+        <div id="more-complex-example"></div>
+    </div>
+</section>
 
     </div>
 
@@ -203,18 +209,55 @@ bikesled.build();
         var componentMenu = document.getElementById( "bikesled-sidebar" );
         var container = document.getElementById( "bikesled-container" );
         var componentMenuItems = document.querySelectorAll( "#bikesled-sidebar li" );
+        var componentWrappers = document.querySelectorAll( ".bikesled-component-wrapper" );
+        var componentArray = Array.from( componentWrappers );
+
+        var menuDictionary = Array
+            .from( componentMenuItems )
+            .reduce(
+                ( acc, menuItem ) => {
+                    var name = menuItem.textContent;
+                    var kebabName = kebabCase( name );
+                    var target = componentArray.filter(
+                        ( section ) => section.dataset.bikesled === kebabName
+                    )[0];
+
+                    acc[ kebabName ] = {
+                        "name": name,
+                        "menuItem": menuItem,
+                        "target": target
+                    };
+
+                    return acc;
+                },
+                {}
+            );
+
+        function kebabCase( str ){
+            return str
+                .replace( /\s/g, "-" )
+                .toLowerCase()
+        }
+
+        function scrollToComponent( name ){
+            var kebabName = kebabCase( name );
+            var target = menuDictionary[ kebabName ].target;
+            var offsetY = target ? target.offsetTop - 120 : 0;
+
+            window.scrollTo( 0, offsetY );
+        }
 
         function toggleComponentMenu(){
             componentMenu.classList.toggle( "active" );
             container.classList.toggle( "active" );
         }
 
-        function activateMenuItems( event ){
+        function activateMenuItems( target ){
             componentMenuItems.forEach(
                 ( item ) => item.classList.remove( "active" )
             );
 
-            event.target.classList.add( "active" );
+            target.classList.add( "active" );
         }
 
         componentMenuTrigger.addEventListener(
@@ -225,7 +268,22 @@ bikesled.build();
         componentMenuItems.forEach(
             ( item ) => item.addEventListener(
                 "click",
-                activateMenuItems
+                ( event ) => {
+                    activateMenuItems( event.target );
+                    scrollToComponent( event.target.textContent );
+                }
+            )
+        );
+
+        componentWrappers.forEach(
+            ( component ) => component.addEventListener(
+                "mouseenter",
+                ( event ) => {
+                    var itemReference = event.target.dataset.bikesled;
+                    var menuItem = menuDictionary[ itemReference ].menuItem;
+
+                    activateMenuItems( menuItem );
+                }
             )
         );
     </script>

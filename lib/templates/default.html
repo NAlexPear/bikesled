@@ -36,18 +36,55 @@
         var componentMenu = document.getElementById( "bikesled-sidebar" );
         var container = document.getElementById( "bikesled-container" );
         var componentMenuItems = document.querySelectorAll( "#bikesled-sidebar li" );
+        var componentWrappers = document.querySelectorAll( ".bikesled-component-wrapper" );
+        var componentArray = Array.from( componentWrappers );
+
+        var menuDictionary = Array
+            .from( componentMenuItems )
+            .reduce(
+                ( acc, menuItem ) => {
+                    var name = menuItem.textContent;
+                    var kebabName = kebabCase( name );
+                    var target = componentArray.filter(
+                        ( section ) => section.dataset.bikesled === kebabName
+                    )[0];
+
+                    acc[ kebabName ] = {
+                        "name": name,
+                        "menuItem": menuItem,
+                        "target": target
+                    };
+
+                    return acc;
+                },
+                {}
+            );
+
+        function kebabCase( str ){
+            return str
+                .replace( /\s/g, "-" )
+                .toLowerCase()
+        }
+
+        function scrollToComponent( name ){
+            var kebabName = kebabCase( name );
+            var target = menuDictionary[ kebabName ].target;
+            var offsetY = target ? target.offsetTop - 120 : 0;
+
+            window.scrollTo( 0, offsetY );
+        }
 
         function toggleComponentMenu(){
             componentMenu.classList.toggle( "active" );
             container.classList.toggle( "active" );
         }
 
-        function activateMenuItems( event ){
+        function activateMenuItems( target ){
             componentMenuItems.forEach(
                 ( item ) => item.classList.remove( "active" )
             );
 
-            event.target.classList.add( "active" );
+            target.classList.add( "active" );
         }
 
         componentMenuTrigger.addEventListener(
@@ -58,7 +95,22 @@
         componentMenuItems.forEach(
             ( item ) => item.addEventListener(
                 "click",
-                activateMenuItems
+                ( event ) => {
+                    activateMenuItems( event.target );
+                    scrollToComponent( event.target.textContent );
+                }
+            )
+        );
+
+        componentWrappers.forEach(
+            ( component ) => component.addEventListener(
+                "mouseenter",
+                ( event ) => {
+                    var itemReference = event.target.dataset.bikesled;
+                    var menuItem = menuDictionary[ itemReference ].menuItem;
+
+                    activateMenuItems( menuItem );
+                }
             )
         );
     </script>
