@@ -22734,19 +22734,19 @@ module.exports = lodash;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__home_alex_Code_open_source_bikesled_example_components_backbone_view_with_data__ = __webpack_require__(96);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__home_alex_Code_open_source_bikesled_example_components_backbone_view__ = __webpack_require__(97);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_alex_Code_open_source_bikesled_example_components_more_complex_example__ = __webpack_require__(98);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__home_alex_Code_open_source_bikesled_example_components_js_backbone_examples_backbone_view_with_data__ = __webpack_require__(96);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__home_alex_Code_open_source_bikesled_example_components_js_backbone_examples_backbone_view__ = __webpack_require__(97);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_alex_Code_open_source_bikesled_example_components_js_vanilla_constructor_examples_more_complex_example__ = __webpack_require__(98);
 
 
-document.getElementById( "backbone-view-with-data" ).appendChild( new __WEBPACK_IMPORTED_MODULE_0__home_alex_Code_open_source_bikesled_example_components_backbone_view_with_data__["a" /* default */](  ).el );
-document.getElementById( "backbone-view" ).appendChild( new __WEBPACK_IMPORTED_MODULE_1__home_alex_Code_open_source_bikesled_example_components_backbone_view__["a" /* default */]( {
+document.getElementById( "backbone-view-with-data" ).appendChild( new __WEBPACK_IMPORTED_MODULE_0__home_alex_Code_open_source_bikesled_example_components_js_backbone_examples_backbone_view_with_data__["a" /* default */](  ).el );
+document.getElementById( "backbone-view" ).appendChild( new __WEBPACK_IMPORTED_MODULE_1__home_alex_Code_open_source_bikesled_example_components_js_backbone_examples_backbone_view__["a" /* default */]( {
     "title": "Backbone Component",
     "button": "Click Me!",
     "countLabel": "Times Clicked: "
 }
  ).el );
-document.getElementById( "more-complex-example" ).innerHTML = new __WEBPACK_IMPORTED_MODULE_2__home_alex_Code_open_source_bikesled_example_components_more_complex_example__["a" /* default */]( {
+document.getElementById( "more-complex-example" ).innerHTML = new __WEBPACK_IMPORTED_MODULE_2__home_alex_Code_open_source_bikesled_example_components_js_vanilla_constructor_examples_more_complex_example__["a" /* default */]( {
     "title": "Vanilla JS",
     "prompt": "This data came from this component's associated JSON file"
 }

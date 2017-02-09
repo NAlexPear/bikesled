@@ -24,9 +24,9 @@
     <div id="bikesled-sidebar">
         <ul>
             
-                <li>Backbone View</li>
-            
                 <li>Simple Example</li>
+            
+                <li>Backbone View</li>
             
                 <li>More Complex Example</li>
             
@@ -35,65 +35,7 @@
         </ul>
     </div>
     <div id="bikesled-container">
-        <section class="bikesled-component-wrapper" data-bikesled="backbone-view">
-    <div class="bikesled-component">
-        <h2>Backbone View</h2>
-    </div>
-    <div class="bikesled-component">
-        <h3>Input:</h3>
-        <pre><code><span class="hljs-comment">// Libraries</span>
-<span class="hljs-keyword">import</span> Backbone <span class="hljs-keyword">from</span> <span class="hljs-string">"backbone"</span>;
-
-<span class="hljs-comment">// Lodash Methods</span>
-<span class="hljs-keyword">import</span> template <span class="hljs-keyword">from</span> <span class="hljs-string">"lodash/fp/template"</span>;
-<span class="hljs-keyword">import</span> tmpl <span class="hljs-keyword">from</span> <span class="hljs-string">"./backbone-view.html"</span>;
-
-<span class="hljs-keyword">var</span> TestView = Backbone.View.extend( {
-    <span class="hljs-string">"template"</span>: template( tmpl ),
-    <span class="hljs-string">"events"</span>: {
-        <span class="hljs-string">"click button.counter"</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clickCounter</span>(<span class="hljs-params"></span>)</span>{
-            <span class="hljs-keyword">var</span> $count = <span class="hljs-keyword">this</span>.$( <span class="hljs-string">".count"</span> );
-            <span class="hljs-keyword">var</span> value = <span class="hljs-built_in">Number</span>( $count.text() );
-
-            $count.text( ++value );
-        }
-    },
-
-    initialize( data ){
-        <span class="hljs-keyword">this</span>.render( data );
-    },
-    render( data ){
-        <span class="hljs-keyword">this</span>.$el.html( <span class="hljs-keyword">this</span>.template( data ) );
-
-        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.$el;
-    }
-} );
-
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> TestView;
-</code></pre>
-    </div>
-    <div class="bikesled-component">
-        <h3>Notes:</h3>
-        <div>
-            <ol>
-                
-                    <li><p>This is a simple Backbone view. It depends on a globally-installed jQuery module, which is pulled in automatically through Webpack (you can see that dependency in the <code>package.json</code> file in the example project directory.)</p>
-</li>
-                
-                    <li><p>Click the button to see the event system in action!</p>
-</li>
-                
-            </ol>
-        </div>
-    </div>
-    <div class="bikesled-component">
-        <h3>Output: </h3>
-    </div>
-    <div>
-        <div id="backbone-view"></div>
-    </div>
-</section>
-<section class="bikesled-component-wrapper" data-bikesled="simple-example">
+        <section class="bikesled-component-wrapper" data-bikesled="simple-example">
     <div class="bikesled-component">
         <h2>Simple Example</h2>
     </div>
@@ -158,6 +100,64 @@ bikesled.build();
     </div>
 </div>
 </div>
+    </div>
+</section>
+<section class="bikesled-component-wrapper" data-bikesled="backbone-view">
+    <div class="bikesled-component">
+        <h2>Backbone View</h2>
+    </div>
+    <div class="bikesled-component">
+        <h3>Input:</h3>
+        <pre><code><span class="hljs-comment">// Libraries</span>
+<span class="hljs-keyword">import</span> Backbone <span class="hljs-keyword">from</span> <span class="hljs-string">"backbone"</span>;
+
+<span class="hljs-comment">// Lodash Methods</span>
+<span class="hljs-keyword">import</span> template <span class="hljs-keyword">from</span> <span class="hljs-string">"lodash/fp/template"</span>;
+<span class="hljs-keyword">import</span> tmpl <span class="hljs-keyword">from</span> <span class="hljs-string">"./backbone-view.html"</span>;
+
+<span class="hljs-keyword">var</span> TestView = Backbone.View.extend( {
+    <span class="hljs-string">"template"</span>: template( tmpl ),
+    <span class="hljs-string">"events"</span>: {
+        <span class="hljs-string">"click button.counter"</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">clickCounter</span>(<span class="hljs-params"></span>)</span>{
+            <span class="hljs-keyword">var</span> $count = <span class="hljs-keyword">this</span>.$( <span class="hljs-string">".count"</span> );
+            <span class="hljs-keyword">var</span> value = <span class="hljs-built_in">Number</span>( $count.text() );
+
+            $count.text( ++value );
+        }
+    },
+
+    initialize( data ){
+        <span class="hljs-keyword">this</span>.render( data );
+    },
+    render( data ){
+        <span class="hljs-keyword">this</span>.$el.html( <span class="hljs-keyword">this</span>.template( data ) );
+
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.$el;
+    }
+} );
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> TestView;
+</code></pre>
+    </div>
+    <div class="bikesled-component">
+        <h3>Notes:</h3>
+        <div>
+            <ol>
+                
+                    <li><p>This is a simple Backbone view. It depends on a globally-installed jQuery module, which is pulled in automatically through Webpack (you can see that dependency in the <code>package.json</code> file in the example project directory.)</p>
+</li>
+                
+                    <li><p>Click the button to see the event system in action!</p>
+</li>
+                
+            </ol>
+        </div>
+    </div>
+    <div class="bikesled-component">
+        <h3>Output: </h3>
+    </div>
+    <div>
+        <div id="backbone-view"></div>
     </div>
 </section>
 <section class="bikesled-component-wrapper" data-bikesled="more-complex-example">
