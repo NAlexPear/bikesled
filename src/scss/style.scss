@@ -83,11 +83,22 @@
 #bikesled-container{
     margin-top: $size-header * 1.5;
     padding: 0 1.5rem;
-    
+
     transition: margin-left 0.3s ease;
 
     &.active{
         margin-left: $size-sidebar;
+    }
+
+    .bikesled-component-wrapper{
+        padding-bottom: 5rem;
+        margin-bottom: 5rem;
+
+        border-bottom: dotted lighten( $color-accent-dark, 40 );
+
+        &:last-child{
+            border-bottom: none;
+        }
     }
 
     .bikesled-component{
