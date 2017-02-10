@@ -17,3 +17,16 @@ li:nth-child(2){
 li:nth-child(3){
     color: palegoldenrod;
 }
+
+.swatch{
+    display: inline-block;
+    width: 15rem;
+    height: 1.5rem;
+    position: relative;
+}
+
+.swatch code{
+    height: 100%;
+    position: absolute;
+    top: 30%;
+}

@@ -17,7 +17,7 @@
     
 
     
-        <script src="http://sinonjs.org/releases/sinon-1.17.6.js" charset="utf-8"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sinon.js/1.15.4/sinon.min.js" charset="utf-8"></script>
         <script type="text/javascript">
             window.bikesled = {};
 
@@ -41,6 +41,8 @@
                     <li>More Complex Example</li>
                 
                     <li>Backbone View With Data</li>
+                
+                    <li>Swatch</li>
                 
             </ul>
         </div>
@@ -268,6 +270,42 @@ bikesled.build();
     </div>
     <div>
         <div id="backbone-view-with-data"></div>
+    </div>
+</section>
+<section class="bikesled-component-wrapper" data-bikesled="swatch">
+    <div class="bikesled-component">
+        <h2>Swatch</h2>
+    </div>
+    <div class="bikesled-component">
+        <h3>Input:</h3>
+        <pre><code><span class="hljs-comment">// Lodash Methods</span>
+<span class="hljs-keyword">import</span> map <span class="hljs-keyword">from</span> <span class="hljs-string">"lodash/fp/map"</span>;
+<span class="hljs-keyword">import</span> template <span class="hljs-keyword">from</span> <span class="hljs-string">"lodash/fp/template"</span>;
+
+<span class="hljs-keyword">var</span> swatchComponent = <span class="hljs-string">"&lt;div&gt;&lt;div class=\"swatch\"&gt;&lt;code&gt;&lt;%= variable %&gt;&lt;/code&gt;&lt;/div&gt;&lt;div class=\"swatch\" style=\"background-color:&lt;%= rgba %&gt;\"&gt;&lt;/div&gt;"</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">SwatchConstructor</span>(<span class="hljs-params"> data </span>)</span>{
+    <span class="hljs-keyword">this</span>.el = map(
+        <span class="hljs-function">(<span class="hljs-params"> variable </span>) =&gt;</span> template( swatchComponent )( variable )
+    )( data ).join( <span class="hljs-string">""</span> );
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> SwatchConstructor;
+</code></pre>
+    </div>
+    <div class="bikesled-component">
+        <h3>Notes:</h3>
+        <div>
+            <ol>
+                
+            </ol>
+        </div>
+    </div>
+    <div class="bikesled-component">
+        <h3>Output: </h3>
+    </div>
+    <div>
+        <div id="swatch"></div>
     </div>
 </section>
 
