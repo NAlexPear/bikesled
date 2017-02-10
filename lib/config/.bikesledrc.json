@@ -4,7 +4,12 @@
     "components": {
         "main": "./components"
     },
+    "renderers": [],
+    "resolve": {
+        "alias": {}
+    },
     "stylesheet": "",
     "bikesledStyles": true,
+    "mockRequests": true,
     "inline": false
 }

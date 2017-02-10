@@ -7,18 +7,15 @@ import map from "lodash/fp/map";
 // Internal Components
 import TestCollection from "collection/TestCollection";
 
-var testCollectionData = [
-    { "name": "TestModel1" },
-    { "name": "TestModel2" }
-];
-
 var TestViewWithCollection = Backbone.View.extend( {
     initialize(){
-        this.collection = new TestCollection( testCollectionData );
+        this.collection = new TestCollection();
 
-        this.collection.add( { "name": "TestModel3" } );
-
-        this.render();
+        this.collection
+            .fetch()
+            .then(
+                () => this.render()
+            );
     },
     render(){
         var listItems = map(

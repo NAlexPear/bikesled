@@ -13,106 +13,121 @@
     <% if( stylesheet ) { %>
         <link rel="stylesheet" href="style.css">
     <% } %>
+
+    <% if( mockRequests ) { %>
+        <script src="http://sinonjs.org/releases/sinon-1.17.6.js" charset="utf-8"></script>
+        <script type="text/javascript">
+            window.bikesled = {};
+
+            window.bikesled.server = sinon.fakeServer.create();
+        </script>
+    <% } %>
 </head>
 <body>
-    <nav id="bikesled-header">
-        <h4 class="bikesled-component-menu">menu</h4>
-        <h3 class="bikesled-title"><%= title %></h3>
-    </nav>
-    <div id="bikesled-sidebar">
-        <ul>
-            <% names.forEach( ( name ) => { %>
-                <li><%= name %></li>
-            <% } ); %>
-        </ul>
-    </div>
+    <% if( bikesledStyles ){ %>
+        <nav id="bikesled-header">
+            <h4 class="bikesled-component-menu">menu</h4>
+            <h3 class="bikesled-title"><%= title %></h3>
+        </nav>
+        <div id="bikesled-sidebar">
+            <ul>
+                <% names.forEach( ( name ) => { %>
+                    <li><%= name %></li>
+                <% } ); %>
+            </ul>
+        </div>
+    <% } %>
+
     <div id="bikesled-container">
         <%= rendered %>
     </div>
 
     <script src="bundle.js" charset="utf-8"></script>
-    <script type="text/javascript">
-        var componentMenuTrigger = document.querySelector( "#bikesled-header .bikesled-component-menu" );
-        var componentMenu = document.getElementById( "bikesled-sidebar" );
-        var container = document.getElementById( "bikesled-container" );
-        var componentMenuItems = document.querySelectorAll( "#bikesled-sidebar li" );
-        var componentWrappers = document.querySelectorAll( ".bikesled-component-wrapper" );
-        var componentArray = Array.from( componentWrappers );
 
-        var menuDictionary = Array
-            .from( componentMenuItems )
-            .reduce(
-                ( acc, menuItem ) => {
-                    var name = menuItem.textContent;
-                    var kebabName = kebabCase( name );
-                    var target = componentArray.filter(
-                        ( section ) => section.dataset.bikesled === kebabName
-                    )[0];
+    <% if( bikesledStyles ){ %>
+        <script type="text/javascript">
+            var componentMenuTrigger = document.querySelector( "#bikesled-header .bikesled-component-menu" );
+            var componentMenu = document.getElementById( "bikesled-sidebar" );
+            var container = document.getElementById( "bikesled-container" );
+            var componentMenuItems = document.querySelectorAll( "#bikesled-sidebar li" );
+            var componentWrappers = document.querySelectorAll( ".bikesled-component-wrapper" );
+            var componentArray = Array.from( componentWrappers );
 
-                    acc[ kebabName ] = {
-                        "name": name,
-                        "menuItem": menuItem,
-                        "target": target
-                    };
+            var menuDictionary = Array
+                .from( componentMenuItems )
+                .reduce(
+                    ( acc, menuItem ) => {
+                        var name = menuItem.textContent;
+                        var kebabName = kebabCase( name );
+                        var target = componentArray.filter(
+                            ( section ) => section.dataset.bikesled === kebabName
+                        )[0];
 
-                    return acc;
-                },
-                {}
-            );
+                        acc[ kebabName ] = {
+                            "name": name,
+                            "menuItem": menuItem,
+                            "target": target
+                        };
 
-        function kebabCase( str ){
-            return str
-                .replace( /\s/g, "-" )
-                .toLowerCase()
-        }
+                        return acc;
+                    },
+                    {}
+                );
 
-        function scrollToComponent( name ){
-            var kebabName = kebabCase( name );
-            var target = menuDictionary[ kebabName ].target;
-            var offsetY = target ? target.offsetTop - 120 : 0;
+            function kebabCase( str ){
+                return str
+                    .replace( /\s/g, "-" )
+                    .toLowerCase()
+            }
 
-            window.scrollTo( 0, offsetY );
-        }
+            function scrollToComponent( name ){
+                var kebabName = kebabCase( name );
+                var target = menuDictionary[ kebabName ].target;
+                var offsetY = target ? target.offsetTop - 120 : 0;
 
-        function toggleComponentMenu(){
-            componentMenu.classList.toggle( "active" );
-            container.classList.toggle( "active" );
-        }
+                window.scrollTo( 0, offsetY );
+            }
 
-        function activateMenuItems( target ){
-            componentMenuItems.forEach(
-                ( item ) => item.classList.remove( "active" )
-            );
+            function toggleComponentMenu(){
+                componentMenu.classList.toggle( "active" );
+                container.classList.toggle( "active" );
+            }
 
-            target.classList.add( "active" );
-        }
+            function activateMenuItems( target ){
+                componentMenuItems.forEach(
+                    ( item ) => item.classList.remove( "active" )
+                );
 
-        componentMenuTrigger.addEventListener(
-            "click",
-            toggleComponentMenu
-        );
+                target.classList.add( "active" );
+            }
 
-        componentMenuItems.forEach(
-            ( item ) => item.addEventListener(
+            componentMenuTrigger.addEventListener(
                 "click",
-                ( event ) => {
-                    activateMenuItems( event.target );
-                    scrollToComponent( event.target.textContent );
-                }
-            )
-        );
+                toggleComponentMenu
+            );
 
-        componentWrappers.forEach(
-            ( component ) => component.addEventListener(
-                "mouseenter",
-                ( event ) => {
-                    var itemReference = event.target.dataset.bikesled;
-                    var menuItem = menuDictionary[ itemReference ].menuItem;
+            componentMenuItems.forEach(
+                ( item ) => item.addEventListener(
+                    "click",
+                    ( event ) => {
+                        activateMenuItems( event.target );
+                        scrollToComponent( event.target.textContent );
+                    }
+                )
+            );
 
-                    activateMenuItems( menuItem );
-                }
-            )
-        );
-    </script>
+            componentWrappers.forEach(
+                ( component ) => component.addEventListener(
+                    "mouseenter",
+                    ( event ) => {
+                        var itemReference = event.target.dataset.bikesled;
+                        var menuItem = menuDictionary[ itemReference ].menuItem;
+
+                        activateMenuItems( menuItem );
+                    }
+                )
+            );
+        </script>
+    <% } %>
 </body>
 </html>

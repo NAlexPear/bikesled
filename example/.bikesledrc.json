@@ -20,5 +20,7 @@
         }
     },
     "stylesheet": "./styles/style.css",
+    "bikesledStyles": true,
+    "mockRequests": true,
     "inline": false
 }

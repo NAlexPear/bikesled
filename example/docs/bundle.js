@@ -6795,18 +6795,15 @@ module.exports = toInteger;
 // Internal Components
 
 
-var testCollectionData = [
-    { "name": "TestModel1" },
-    { "name": "TestModel2" }
-];
-
 var TestViewWithCollection = __WEBPACK_IMPORTED_MODULE_0_backbone___default.a.View.extend( {
     initialize(){
-        this.collection = new __WEBPACK_IMPORTED_MODULE_2_collection_TestCollection__["a" /* default */]( testCollectionData );
+        this.collection = new __WEBPACK_IMPORTED_MODULE_2_collection_TestCollection__["a" /* default */]();
 
-        this.collection.add( { "name": "TestModel3" } );
-
-        this.render();
+        this.collection
+            .fetch()
+            .then(
+                () => this.render()
+            );
     },
     render(){
         var listItems = __WEBPACK_IMPORTED_MODULE_1_lodash_fp_map___default()(
@@ -6902,7 +6899,7 @@ function complexExample( data ){
 
 
 var TestCollection = __WEBPACK_IMPORTED_MODULE_0_backbone___default.a.Collection.extend( {
-    "url": "some/restful/endpoint"
+    "url": "/some/restful/endpoint/or/not/whatever"
 } );
 
 /* harmony default export */ __webpack_exports__["a"] = TestCollection;
@@ -23008,13 +23005,38 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_alex_Code_open_source_bikesled_example_components_js_vanilla_constructor_examples_more_complex_example__ = __webpack_require__(100);
 
 
-document.getElementById( "backbone-view-with-data" ).appendChild( new __WEBPACK_IMPORTED_MODULE_0__home_alex_Code_open_source_bikesled_example_components_js_backbone_examples_backbone_view_with_data__["a" /* default */](  ).el );
-document.getElementById( "backbone-view" ).appendChild( new __WEBPACK_IMPORTED_MODULE_1__home_alex_Code_open_source_bikesled_example_components_js_backbone_examples_backbone_view__["a" /* default */]( {
+window.bikesled.server.respondWith(
+        [
+            200,
+            { "Content-Type": "application/json" },
+            JSON.stringify( [
+    { "name": "TestModel1" },
+    { "name": "TestModel2" }
+]
+ )
+        ]
+    );document.getElementById( "backbone-view-with-data" ).appendChild( new __WEBPACK_IMPORTED_MODULE_0__home_alex_Code_open_source_bikesled_example_components_js_backbone_examples_backbone_view_with_data__["a" /* default */]( [
+    { "name": "TestModel1" },
+    { "name": "TestModel2" }
+]
+ ).el );window.bikesled.server.respond();
+window.bikesled.server.respondWith(
+        [
+            200,
+            { "Content-Type": "application/json" },
+            JSON.stringify( {
     "title": "Backbone Component",
     "button": "Click Me!",
     "countLabel": "Times Clicked: "
 }
- ).el );
+ )
+        ]
+    );document.getElementById( "backbone-view" ).appendChild( new __WEBPACK_IMPORTED_MODULE_1__home_alex_Code_open_source_bikesled_example_components_js_backbone_examples_backbone_view__["a" /* default */]( {
+    "title": "Backbone Component",
+    "button": "Click Me!",
+    "countLabel": "Times Clicked: "
+}
+ ).el );window.bikesled.server.respond();
 document.getElementById( "more-complex-example" ).innerHTML = new __WEBPACK_IMPORTED_MODULE_2__home_alex_Code_open_source_bikesled_example_components_js_vanilla_constructor_examples_more_complex_example__["a" /* default */]( {
     "title": "Vanilla JS",
     "prompt": "This data came from this component's associated JSON file"
