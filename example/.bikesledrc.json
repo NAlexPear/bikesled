@@ -14,6 +14,11 @@
             "src": "./renderers/example-constructor.js"
         }
     ],
+    "resolve": {
+        "alias": {
+            "collection": "./externals/collections"
+        }
+    },
     "stylesheet": "./styles/style.css",
     "inline": false
 }
