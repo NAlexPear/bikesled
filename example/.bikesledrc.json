@@ -19,6 +19,9 @@
             "collection": "./externals/collections"
         }
     },
+    "globals": {
+        "$": "jquery"
+    },
     "stylesheet": "./styles/style.css",
     "bikesledStyles": true,
     "mockRequests": true,
