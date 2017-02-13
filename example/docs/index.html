@@ -56,8 +56,10 @@
 
     
         <div class="bikesled-component">
-            <h3>Input:</h3>
-            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+            <h3>Inputs:</h3>
+            
+                <h4>HTML</h4>
+                <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Default Component<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">hr</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>This is just plain old HTML<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
@@ -72,6 +74,8 @@
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
+            
+            
         </div>
     
 
@@ -130,8 +134,19 @@ bikesled.build();
 
     
         <div class="bikesled-component">
-            <h3>Input:</h3>
-            <pre><code><span class="hljs-comment">// Libraries</span>
+            <h3>Inputs:</h3>
+            
+                <h4>HTML</h4>
+                <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">%=</span> <span class="hljs-attr">title</span> %&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"counter"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">%=</span> <span class="hljs-attr">button</span> %&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">%=</span> <span class="hljs-attr">countLabel</span> %&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"count"</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+            
+            
+                <h4>JS</h4>
+                <pre><code><span class="hljs-comment">// Libraries</span>
 <span class="hljs-keyword">import</span> Backbone <span class="hljs-keyword">from</span> <span class="hljs-string">"backbone"</span>;
 
 <span class="hljs-comment">// Lodash Methods</span>
@@ -161,6 +176,7 @@ bikesled.build();
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> TestView;
 </code></pre>
+            
         </div>
     
 
@@ -195,8 +211,11 @@ bikesled.build();
 
     
         <div class="bikesled-component">
-            <h3>Input:</h3>
-            <pre><code><span class="hljs-keyword">import</span> _ <span class="hljs-keyword">from</span> <span class="hljs-string">"underscore"</span>;
+            <h3>Inputs:</h3>
+            
+            
+                <h4>JS</h4>
+                <pre><code><span class="hljs-keyword">import</span> _ <span class="hljs-keyword">from</span> <span class="hljs-string">"underscore"</span>;
 
 <span class="hljs-keyword">var</span> template = <span class="hljs-string">"&lt;h4&gt;&lt;%= title %&gt;&lt;/h4&gt;&lt;p&gt;&lt;%= prompt %&gt;&lt;/p&gt;"</span>;
 
@@ -213,6 +232,7 @@ bikesled.build();
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> complexExample;
 </code></pre>
+            
         </div>
     
 
@@ -260,8 +280,11 @@ bikesled.build();
 
     
         <div class="bikesled-component">
-            <h3>Input:</h3>
-            <pre><code><span class="hljs-comment">// Libraries</span>
+            <h3>Inputs:</h3>
+            
+            
+                <h4>JS</h4>
+                <pre><code><span class="hljs-comment">// Libraries</span>
 <span class="hljs-keyword">import</span> Backbone <span class="hljs-keyword">from</span> <span class="hljs-string">"backbone"</span>;
 
 <span class="hljs-comment">// Lodash Methods</span>
@@ -295,6 +318,7 @@ bikesled.build();
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> TestViewWithCollection;
 </code></pre>
+            
         </div>
     
 

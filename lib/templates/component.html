@@ -3,10 +3,17 @@
         <h2><%= name %></h2>
     </div>
 
-    <% if( input ){ %>
+    <% if( inputs.html || inputs.js ){ %>
         <div class="bikesled-component">
-            <h3>Input:</h3>
-            <pre><code><%= input %></code></pre>
+            <h3>Inputs:</h3>
+            <% if( inputs.html ){ %>
+                <h4>HTML</h4>
+                <pre><code><%= inputs.html %></code></pre>
+            <% } %>
+            <% if( inputs.js ){ %>
+                <h4>JS</h4>
+                <pre><code><%= inputs.js %></code></pre>
+            <% } %>
         </div>
     <% } %>
 
