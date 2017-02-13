@@ -1,6 +1,6 @@
 {
   "name": "bikesled",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Build component-based documentation for any client-side resource in your web project.",
   "main": "index.js",
   "bin": {
