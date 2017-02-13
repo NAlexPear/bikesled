@@ -19,9 +19,7 @@
             "collection": "./externals/collections"
         }
     },
-    "globals": {
-        "$": "jquery"
-    },
+    "scripts": [ "./scripts/example.js" ],
     "stylesheet": "./styles/style.css",
     "bikesledStyles": true,
     "mockRequests": true,

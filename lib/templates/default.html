@@ -14,6 +14,13 @@
         <link rel="stylesheet" href="style.css">
     <% } %>
 
+    <% if( scripts ) { %>
+        <% scripts.forEach( ( scriptSrc ) => { %>
+            <script src="<%= scriptSrc.split( '/' ).pop() %>" charset="utf-8"></script>
+        <% } ); %>
+    <% } %>
+
+
     <% if( mockRequests ) { %>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sinon.js/1.15.4/sinon.min.js" charset="utf-8"></script>
         <script type="text/javascript">

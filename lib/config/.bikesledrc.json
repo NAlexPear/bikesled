@@ -8,7 +8,7 @@
     "resolve": {
         "alias": {}
     },
-    "globals": {},
+    "scripts": [],
     "stylesheet": "",
     "bikesledStyles": true,
     "mockRequests": true,
