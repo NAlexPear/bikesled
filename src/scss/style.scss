@@ -14,6 +14,7 @@
     position: fixed;
     top: 0;
     right: 0;
+    z-index: 1;
 
     background-color: $color-accent-dark;
 
@@ -22,7 +23,7 @@
     align-items: center;
 
     box-sizing: border-box;
-    padding: 1rem;
+    padding: 16px;
 
     .bikesled-title{
         font-family: sans-serif;
@@ -61,28 +62,31 @@
     ul{
         padding: 0;
         margin-top: 0;
-    }
+        list-style-type: none;
+        margin-left: 0;
 
-    li{
-        font-family: sans-serif;
-        color: $color-background-subtle;
-        padding: 1rem;
-        border-bottom: 1px solid $color-background-subtle;
-        cursor: pointer;
+        li{
+            font-family: sans-serif;
+            color: $color-background-subtle;
+            padding: 16px;
+            border-bottom: 1px solid $color-background-subtle;
+            cursor: pointer;
+            margin: 0;
 
-        &:hover{
-            background-color: lighten( $color-accent-dark, 25 );
-        }
+            &:hover{
+                background-color: lighten( $color-accent-dark, 25 );
+            }
 
-        &.active{
-            background-color: lighten( $color-accent-dark, 30 );
+            &.active{
+                background-color: lighten( $color-accent-dark, 30 );
+            }
         }
     }
 }
 
 #bikesled-container{
     margin-top: $size-header * 1.5;
-    padding: 0 1.5rem;
+    padding: 0 18px;
 
     transition: margin-left 0.3s ease;
 
@@ -91,8 +95,8 @@
     }
 
     .bikesled-component-wrapper{
-        padding-bottom: 5rem;
-        margin-bottom: 5rem;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
 
         border-bottom: dotted lighten( $color-accent-dark, 40 );
 
@@ -104,7 +108,45 @@
     .bikesled-component{
         @extend %reset;
 
-        font-family: "Helvetica", sans-serif;
+        ol {
+            list-style-type: decimal;
+        }
+
+        ul {
+            list-style-type: disc;
+        }
+
+        ul,
+        ol {
+            list-style-position: outside;
+            margin-left: 20px;
+
+            li{
+                margin: 5px;
+            }
+
+            ul {
+                list-style-type: circle;
+                margin-left: 30px;
+            }
+
+            ol{
+                list-style-type: lower-latin;
+                margin-left: 30px;
+            }
+        }
+
+        pre {
+            margin: 16px 0;
+        }
+
+        ol,
+        ul,
+        li,
+        p,
+        div {
+            font-family: "Open Sans", sans-serif;
+        }
 
         > h1,
         > h2,
@@ -112,22 +154,25 @@
         > h4
         {
             color: $color-accent-dark;
+            margin: 18px 0;
+            font-family: "Helvetica", sans-serif;
         }
 
         > pre {
-            padding: 1rem;
-            box-shadow: 0 0.15rem 0.3rem $color-shadow;
+            padding: 16px;
+            box-shadow: 0 1.5px 3px $color-shadow;
             background-color: $color-background-subtle;
             overflow-y: auto;
 
             > code {
                 @import "highlight";
+                font-size: 18px;
             }
         }
 
         > hr {
             opacity: 0.5;
-            height: 0.1rem;
+            height: 1.5px;
             border: none;
             background-color: $color-shadow;
         }
