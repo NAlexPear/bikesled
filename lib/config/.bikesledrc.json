@@ -10,7 +10,7 @@
         "alias": {}
     },
     "scripts": [],
-    "stylesheet": "",
+    "stylesheets": [],
     "bikesledStyles": true,
     "mockRequests": true,
     "inline": false

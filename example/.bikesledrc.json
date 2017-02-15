@@ -25,8 +25,13 @@
             "collection": "./externals/collections"
         }
     },
-    "scripts": [ "./scripts/example.js" ],
-    "stylesheet": "./styles/style.css",
+    "scripts": [
+        "./scripts/example.js"
+    ],
+    "stylesheets": [
+        "./styles/style.css",
+        "./styles/overrides.css"
+    ],
     "bikesledStyles": true,
     "mockRequests": true,
     "inline": false

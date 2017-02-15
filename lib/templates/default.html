@@ -10,8 +10,10 @@
         <%= styles %>
     <% } %>
 
-    <% if( stylesheet ) { %>
-        <link rel="stylesheet" href="style.css">
+    <% if( stylesheets ) { %>
+        <% stylesheets.forEach( ( stylesheet ) => { %>
+            <link rel="stylesheet" href="<%= stylesheet.split( '/' ).pop() %>">
+        <% } ); %>
     <% } %>
 
     <% if( scripts ) { %>
