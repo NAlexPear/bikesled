@@ -55,12 +55,14 @@
 
     <% if( bikesledStyles ){ %>
         <script type="text/javascript">
+            var inputExpanders = document.querySelectorAll( ".bikesled-component .expand" );
             var componentMenuTrigger = document.querySelector( "#bikesled-header .bikesled-component-menu" );
             var componentMenu = document.getElementById( "bikesled-sidebar" );
             var container = document.getElementById( "bikesled-container" );
             var componentMenuItems = document.querySelectorAll( "#bikesled-sidebar li" );
             var componentWrappers = document.querySelectorAll( ".bikesled-component-wrapper" );
             var componentArray = Array.from( componentWrappers );
+            var expanderArray = Array.from( inputExpanders );
 
             var menuDictionary = Array
                 .from( componentMenuItems )
@@ -133,6 +135,25 @@
                         var menuItem = menuDictionary[ itemReference ].menuItem;
 
                         activateMenuItems( menuItem );
+                    }
+                )
+            );
+
+            inputExpanders.forEach(
+                ( expander ) => expander.addEventListener(
+                    "click",
+                    ( event ) => {
+                        var parent = event.target.parentNode;
+                        var pre = parent.nextSibling.nextSibling;
+
+                        if( event.target.textContent === "+" ){
+                            event.target.textContent = "-";
+                        }
+                        else{
+                            event.target.textContent = "+";
+                        }
+
+                        pre.classList.toggle( "active" );
                     }
                 )
             );

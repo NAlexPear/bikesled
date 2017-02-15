@@ -108,6 +108,18 @@
     .bikesled-component{
         @extend %reset;
 
+        .expand{
+            cursor: pointer;
+            transform: translateY( -10% );
+            display: inline-block;
+            color: $color-accent-dark;
+            opacity: 0.75;
+
+            &:hover{
+                opacity: 1;
+            }
+        }
+
         ol {
             list-style-type: decimal;
         }
@@ -159,10 +171,16 @@
         }
 
         > pre {
-            padding: 16px;
             box-shadow: 0 1.5px 3px $color-shadow;
             background-color: $color-background-subtle;
             overflow-y: auto;
+            height: 0;
+            padding: 0;
+
+            &.active{
+                padding: 16px;
+                height: inherit;
+            }
 
             > code {
                 @import "highlight";
