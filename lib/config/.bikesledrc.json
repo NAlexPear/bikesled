@@ -4,6 +4,7 @@
     "components": {
         "main": "./components"
     },
+    "loaders": [],
     "renderers": [],
     "resolve": {
         "alias": {}

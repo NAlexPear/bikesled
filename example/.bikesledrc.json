@@ -4,6 +4,12 @@
     "components": {
         "main": "./components"
     },
+    "loaders": [
+        {
+            "test": "datatables\\.",
+            "loader": "imports-loader?define=>false"
+        }
+    ],
     "renderers": [
         {
             "test": "backbone",
