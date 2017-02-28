@@ -45,22 +45,38 @@
         <div id="bikesled-sidebar">
             <ul>
                 
+                    <li>Swatch</li>
+                
                     <li>Simple Example</li>
+                
+                    <li>Backbone View With Data</li>
                 
                     <li>Backbone View</li>
                 
                     <li>More Complex Example</li>
-                
-                    <li>Swatch</li>
-                
-                    <li>Backbone View With Data</li>
                 
             </ul>
         </div>
     
 
     <div id="bikesled-container">
-        <section class="bikesled-component-wrapper" data-bikesled="simple-example">
+        <section class="bikesled-component-wrapper" data-bikesled="swatch">
+    <div class="bikesled-component">
+        <h2>Swatch</h2>
+    </div>
+
+    <div class="bikesled-component">
+        <h3>Output: </h3>
+    </div>
+    <div>
+        <div id="swatch"></div>
+    </div>
+
+    
+
+    
+</section>
+<section class="bikesled-component-wrapper" data-bikesled="simple-example">
     <div class="bikesled-component">
         <h2>Simple Example</h2>
     </div>
@@ -136,6 +152,64 @@ bikesled.build();
                 </ol>
             </div>
         </div>
+    
+</section>
+<section class="bikesled-component-wrapper" data-bikesled="backbone-view-with-data">
+    <div class="bikesled-component">
+        <h2>Backbone View With Data</h2>
+    </div>
+
+    <div class="bikesled-component">
+        <h3>Output: </h3>
+    </div>
+    <div>
+        <div id="backbone-view-with-data"></div>
+    </div>
+
+    
+        <div class="bikesled-component">
+            <h3>Inputs:</h3>
+            
+            
+                <h4>JS <span class="expand">&#9655;</span></h4>
+                <pre><code><span class="hljs-comment">// Libraries</span>
+<span class="hljs-keyword">import</span> Backbone <span class="hljs-keyword">from</span> <span class="hljs-string">"backbone"</span>;
+
+<span class="hljs-comment">// Lodash Methods</span>
+<span class="hljs-keyword">import</span> map <span class="hljs-keyword">from</span> <span class="hljs-string">"lodash/fp/map"</span>;
+
+<span class="hljs-comment">// Internal Components</span>
+<span class="hljs-keyword">import</span> TestCollection <span class="hljs-keyword">from</span> <span class="hljs-string">"collection/TestCollection"</span>;
+
+<span class="hljs-keyword">var</span> TestViewWithCollection = Backbone.View.extend( {
+    initialize(){
+        <span class="hljs-keyword">this</span>.collection = <span class="hljs-keyword">new</span> TestCollection();
+
+        <span class="hljs-keyword">this</span>.collection
+            .fetch()
+            .then(
+                <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">this</span>.render()
+            );
+    },
+    render(){
+        <span class="hljs-keyword">var</span> listItems = map(
+            <span class="hljs-function">(<span class="hljs-params"> model </span>) =&gt;</span> <span class="hljs-string">`&lt;li&gt;<span class="hljs-subst">${model.get( <span class="hljs-string">"name"</span> )}</span>&lt;/li&gt;`</span>
+        )( <span class="hljs-keyword">this</span>.collection.models );
+
+        <span class="hljs-keyword">this</span>.$el
+            .html( <span class="hljs-string">"&lt;h2&gt;This is a Backbone View&lt;/h2&gt;"</span> )
+            .append( <span class="hljs-string">`&lt;ul&gt;<span class="hljs-subst">${listItems.join( <span class="hljs-string">""</span> )}</span>&lt;/ul&gt;`</span> );
+
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.$el;
+    }
+} );
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> TestViewWithCollection;
+</code></pre>
+            
+        </div>
+    
+
     
 </section>
 <section class="bikesled-component-wrapper" data-bikesled="backbone-view">
@@ -266,80 +340,6 @@ bikesled.build();
                 </ol>
             </div>
         </div>
-    
-</section>
-<section class="bikesled-component-wrapper" data-bikesled="swatch">
-    <div class="bikesled-component">
-        <h2>Swatch</h2>
-    </div>
-
-    <div class="bikesled-component">
-        <h3>Output: </h3>
-    </div>
-    <div>
-        <div id="swatch"></div>
-    </div>
-
-    
-
-    
-</section>
-<section class="bikesled-component-wrapper" data-bikesled="backbone-view-with-data">
-    <div class="bikesled-component">
-        <h2>Backbone View With Data</h2>
-    </div>
-
-    <div class="bikesled-component">
-        <h3>Output: </h3>
-    </div>
-    <div>
-        <div id="backbone-view-with-data"></div>
-    </div>
-
-    
-        <div class="bikesled-component">
-            <h3>Inputs:</h3>
-            
-            
-                <h4>JS <span class="expand">&#9655;</span></h4>
-                <pre><code><span class="hljs-comment">// Libraries</span>
-<span class="hljs-keyword">import</span> Backbone <span class="hljs-keyword">from</span> <span class="hljs-string">"backbone"</span>;
-
-<span class="hljs-comment">// Lodash Methods</span>
-<span class="hljs-keyword">import</span> map <span class="hljs-keyword">from</span> <span class="hljs-string">"lodash/fp/map"</span>;
-
-<span class="hljs-comment">// Internal Components</span>
-<span class="hljs-keyword">import</span> TestCollection <span class="hljs-keyword">from</span> <span class="hljs-string">"collection/TestCollection"</span>;
-
-<span class="hljs-keyword">var</span> TestViewWithCollection = Backbone.View.extend( {
-    initialize(){
-        <span class="hljs-keyword">this</span>.collection = <span class="hljs-keyword">new</span> TestCollection();
-
-        <span class="hljs-keyword">this</span>.collection
-            .fetch()
-            .then(
-                <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">this</span>.render()
-            );
-    },
-    render(){
-        <span class="hljs-keyword">var</span> listItems = map(
-            <span class="hljs-function">(<span class="hljs-params"> model </span>) =&gt;</span> <span class="hljs-string">`&lt;li&gt;<span class="hljs-subst">${model.get( <span class="hljs-string">"name"</span> )}</span>&lt;/li&gt;`</span>
-        )( <span class="hljs-keyword">this</span>.collection.models );
-
-        <span class="hljs-keyword">this</span>.$el
-            .html( <span class="hljs-string">"&lt;h2&gt;This is a Backbone View&lt;/h2&gt;"</span> )
-            .append( <span class="hljs-string">`&lt;ul&gt;<span class="hljs-subst">${listItems.join( <span class="hljs-string">""</span> )}</span>&lt;/ul&gt;`</span> );
-
-        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.$el;
-    }
-} );
-
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> TestViewWithCollection;
-</code></pre>
-            
-        </div>
-    
-
     
 </section>
 

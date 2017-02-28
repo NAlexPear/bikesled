@@ -6803,6 +6803,33 @@ module.exports = toInteger;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_fp_map__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_fp_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash_fp_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_fp_template__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_fp_template___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_lodash_fp_template__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__swatch_html__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__swatch_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__swatch_html__);
+// Lodash Methods
+
+
+
+// Internal Components
+
+
+function SwatchConstructor( data ){
+    this.el = __WEBPACK_IMPORTED_MODULE_0_lodash_fp_map___default()(
+        ( variable ) => __WEBPACK_IMPORTED_MODULE_1_lodash_fp_template___default()( __WEBPACK_IMPORTED_MODULE_2__swatch_html___default.a )( variable )
+    )( data ).join( "" );
+}
+
+/* harmony default export */ __webpack_exports__["a"] = SwatchConstructor;
+
+
+/***/ }),
+/* 101 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_backbone__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_backbone___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_backbone__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_fp_map__ = __webpack_require__(94);
@@ -6844,7 +6871,7 @@ var TestViewWithCollection = __WEBPACK_IMPORTED_MODULE_0_backbone___default.a.Vi
 
 
 /***/ }),
-/* 101 */
+/* 102 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6852,7 +6879,7 @@ var TestViewWithCollection = __WEBPACK_IMPORTED_MODULE_0_backbone___default.a.Vi
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_backbone___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_backbone__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_fp_template__ = __webpack_require__(95);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_fp_template___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_lodash_fp_template__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__backbone_view_html__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__backbone_view_html__ = __webpack_require__(107);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__backbone_view_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__backbone_view_html__);
 // Libraries
 
@@ -6883,33 +6910,6 @@ var TestView = __WEBPACK_IMPORTED_MODULE_0_backbone___default.a.View.extend( {
 } );
 
 /* harmony default export */ __webpack_exports__["a"] = TestView;
-
-
-/***/ }),
-/* 102 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_fp_map__ = __webpack_require__(94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash_fp_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash_fp_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_fp_template__ = __webpack_require__(95);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_fp_template___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_lodash_fp_template__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__swatch_html__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__swatch_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__swatch_html__);
-// Lodash Methods
-
-
-
-// Internal Components
-
-
-function SwatchConstructor( data ){
-    this.el = __WEBPACK_IMPORTED_MODULE_0_lodash_fp_map___default()(
-        ( variable ) => __WEBPACK_IMPORTED_MODULE_1_lodash_fp_template___default()( __WEBPACK_IMPORTED_MODULE_2__swatch_html___default.a )( variable )
-    )( data ).join( "" );
-}
-
-/* harmony default export */ __webpack_exports__["a"] = SwatchConstructor;
 
 
 /***/ }),
@@ -17185,13 +17185,13 @@ return jQuery;
 /* 106 */
 /***/ (function(module, exports) {
 
-module.exports = "<h2><%= title %></h2>\n<button class=\"counter\"><%= button %></button>\n<div>\n    <p><%= countLabel %><span class=\"count\">0</span></p>\n</div>\n";
+module.exports = "<div>\n    <div class=\"swatch\">\n        <code><%= variable %></code>\n    </div>\n    <div class=\"swatch\" style=\"background-color:<%= rgba %>\"></div>\n</div>\n";
 
 /***/ }),
 /* 107 */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n    <div class=\"swatch\">\n        <code><%= variable %></code>\n    </div>\n    <div class=\"swatch\" style=\"background-color:<%= rgba %>\"></div>\n</div>\n";
+module.exports = "<h2><%= title %></h2>\n<button class=\"counter\"><%= button %></button>\n<div>\n    <p><%= countLabel %><span class=\"count\">0</span></p>\n</div>\n";
 
 /***/ }),
 /* 108 */
@@ -23033,46 +23033,14 @@ module.exports = lodash;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__home_alex_Code_open_source_bikesled_example_components_js_backbone_examples_backbone_view_with_data__ = __webpack_require__(100);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__home_alex_Code_open_source_bikesled_example_components_js_backbone_examples_backbone_view__ = __webpack_require__(101);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_alex_Code_open_source_bikesled_example_components_js_no_input_custom_render_swatch__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_alex_Code_open_source_bikesled_example_components_js_vanilla_constructor_examples_more_complex_example__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__home_alex_Code_open_source_bikesled_example_components_001_other_swatch__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__home_alex_Code_open_source_bikesled_example_components_003_js_backbone_examples_backbone_view_with_data__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_alex_Code_open_source_bikesled_example_components_003_js_backbone_examples_backbone_view__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_alex_Code_open_source_bikesled_example_components_003_js_vanilla_constructor_examples_more_complex_example__ = __webpack_require__(103);
 
 
 
-window.bikesled.server.respondWith(
-        [
-            200,
-            { "Content-Type": "application/json" },
-            JSON.stringify( [
-    { "name": "TestModel1" },
-    { "name": "TestModel2" }
-]
- )
-        ]
-    );document.getElementById( "backbone-view-with-data" ).appendChild( new __WEBPACK_IMPORTED_MODULE_0__home_alex_Code_open_source_bikesled_example_components_js_backbone_examples_backbone_view_with_data__["a" /* default */]( [
-    { "name": "TestModel1" },
-    { "name": "TestModel2" }
-]
- ).el );window.bikesled.server.respond();
-window.bikesled.server.respondWith(
-        [
-            200,
-            { "Content-Type": "application/json" },
-            JSON.stringify( {
-    "title": "Backbone Component",
-    "button": "Click Me!",
-    "countLabel": "Times Clicked: "
-}
- )
-        ]
-    );document.getElementById( "backbone-view" ).appendChild( new __WEBPACK_IMPORTED_MODULE_1__home_alex_Code_open_source_bikesled_example_components_js_backbone_examples_backbone_view__["a" /* default */]( {
-    "title": "Backbone Component",
-    "button": "Click Me!",
-    "countLabel": "Times Clicked: "
-}
- ).el );window.bikesled.server.respond();
-document.getElementById( "swatch" ).innerHTML = new __WEBPACK_IMPORTED_MODULE_2__home_alex_Code_open_source_bikesled_example_components_js_no_input_custom_render_swatch__["a" /* default */]( [
+document.getElementById( "swatch" ).innerHTML = new __WEBPACK_IMPORTED_MODULE_0__home_alex_Code_open_source_bikesled_example_components_001_other_swatch__["a" /* default */]( [
     { "variable": "$color-darkest", "rgba": "rgba(0,0,0,1)" },
     { "variable": "$color-dark-type", "rgba": "rgba(42,42,42,1)" },
     { "variable": "$color-dark", "rgba": "rgba(32,42,54,1)" },
@@ -23098,7 +23066,39 @@ document.getElementById( "swatch" ).innerHTML = new __WEBPACK_IMPORTED_MODULE_2_
     { "variable": "$color-normal-background", "rgba": "rgba(255,255,255,1)" }
 ]
  ).el;
-document.getElementById( "more-complex-example" ).innerHTML = new __WEBPACK_IMPORTED_MODULE_3__home_alex_Code_open_source_bikesled_example_components_js_vanilla_constructor_examples_more_complex_example__["a" /* default */]( {
+window.bikesled.server.respondWith(
+        [
+            200,
+            { "Content-Type": "application/json" },
+            JSON.stringify( [
+    { "name": "TestModel1" },
+    { "name": "TestModel2" }
+]
+ )
+        ]
+    );document.getElementById( "backbone-view-with-data" ).appendChild( new __WEBPACK_IMPORTED_MODULE_1__home_alex_Code_open_source_bikesled_example_components_003_js_backbone_examples_backbone_view_with_data__["a" /* default */]( [
+    { "name": "TestModel1" },
+    { "name": "TestModel2" }
+]
+ ).el );window.bikesled.server.respond();
+window.bikesled.server.respondWith(
+        [
+            200,
+            { "Content-Type": "application/json" },
+            JSON.stringify( {
+    "title": "Backbone Component",
+    "button": "Click Me!",
+    "countLabel": "Times Clicked: "
+}
+ )
+        ]
+    );document.getElementById( "backbone-view" ).appendChild( new __WEBPACK_IMPORTED_MODULE_2__home_alex_Code_open_source_bikesled_example_components_003_js_backbone_examples_backbone_view__["a" /* default */]( {
+    "title": "Backbone Component",
+    "button": "Click Me!",
+    "countLabel": "Times Clicked: "
+}
+ ).el );window.bikesled.server.respond();
+document.getElementById( "more-complex-example" ).innerHTML = new __WEBPACK_IMPORTED_MODULE_3__home_alex_Code_open_source_bikesled_example_components_003_js_vanilla_constructor_examples_more_complex_example__["a" /* default */]( {
     "title": "Vanilla JS",
     "prompt": "This data came from this component's associated JSON file"
 }
