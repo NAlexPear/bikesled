@@ -35,7 +35,12 @@
 <body>
     <% if( bikesledStyles ){ %>
         <nav id="bikesled-header">
-            <h4 class="bikesled-component-menu">menu</h4>
+            <span>
+                <h4 class="bikesled-component-menu">menu</h4>
+
+                <input class="search" type="text" placeholder="Filter Components...">
+            </span>
+
             <h3 class="bikesled-title"><%= title %></h3>
         </nav>
         <div id="bikesled-sidebar">
@@ -61,9 +66,10 @@
             var container = document.getElementById( "bikesled-container" );
             var componentMenuItems = document.querySelectorAll( "#bikesled-sidebar li" );
             var componentWrappers = document.querySelectorAll( ".bikesled-component-wrapper" );
+            var search = document.querySelector( "input.search" );
+
             var componentArray = Array.from( componentWrappers );
             var expanderArray = Array.from( inputExpanders );
-
             var menuDictionary = Array
                 .from( componentMenuItems )
                 .reduce(
@@ -151,6 +157,26 @@
                         pre.classList.toggle( "active" );
                     }
                 )
+            );
+
+            search.addEventListener(
+                "keyup",
+                ( event ) => {
+                    var query = event.target.value || "";
+
+                    for( let entry in menuDictionary ){
+                        let fn = query ? "add" : "remove";
+                        let config = menuDictionary[ entry ];
+
+                        config.menuItem.classList[ fn ]( "hidden" );
+                        config.target.classList[ fn ]( "hidden" );
+
+                        if( query && config.name.match( new RegExp( query, "i" ) ) ){
+                            config.menuItem.classList.remove( "hidden" );
+                            config.target.classList.remove( "hidden" );
+                        }
+                    }
+                }
             );
         </script>
     <% } %>

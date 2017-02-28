@@ -5,6 +5,12 @@
     @import "normalize";
 }
 
+%hidden {
+    .hidden {
+        display: none;
+    }
+}
+
 #bikesled-header{
     @extend %reset;
 
@@ -34,15 +40,22 @@
         @extend .bikesled-title;
         text-transform: uppercase;
         cursor: pointer;
+        display: inline;
+        margin-right: 1em;
 
         &:hover{
             color: $color-background-main;
         }
     }
+
+    .search{
+        display: inline;
+    }
 }
 
 #bikesled-sidebar{
     @extend %reset;
+    @extend %hidden;
 
     height: 100%;
     max-height: calc( 100% - $size-header );
@@ -87,6 +100,8 @@
 }
 
 #bikesled-container{
+    @extend %hidden;
+
     margin-top: $size-header * 1.5;
     padding: 0 18px;
 
