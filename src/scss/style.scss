@@ -58,7 +58,7 @@
     @extend %hidden;
 
     height: 100%;
-    max-height: calc( 100% - $size-header );
+    max-height: calc( 100% - 65px );
     overflow-y: auto;
     width: $size-sidebar;
 
