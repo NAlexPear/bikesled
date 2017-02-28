@@ -45,6 +45,8 @@
     @extend %reset;
 
     height: 100%;
+    max-height: calc( 100% - $size-header );
+    overflow-y: auto;
     width: $size-sidebar;
 
     position: fixed;
