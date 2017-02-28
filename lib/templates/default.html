@@ -143,16 +143,11 @@
                 ( expander ) => expander.addEventListener(
                     "click",
                     ( event ) => {
-                        var parent = event.target.parentNode;
+                        var arrow = event.target;
+                        var parent = arrow.parentNode;
                         var pre = parent.nextSibling.nextSibling;
 
-                        if( event.target.textContent === "+" ){
-                            event.target.textContent = "-";
-                        }
-                        else{
-                            event.target.textContent = "+";
-                        }
-
+                        arrow.classList.toggle( "active" );
                         pre.classList.toggle( "active" );
                     }
                 )
