@@ -3,6 +3,13 @@
         <h2><%= name %></h2>
     </div>
 
+    <div class="bikesled-component">
+        <h3>Output: </h3>
+    </div>
+    <div>
+        <%= output %>
+    </div>
+
     <% if( inputs.html || inputs.js ){ %>
         <div class="bikesled-component">
             <h3>Inputs:</h3>
@@ -29,11 +36,4 @@
             </div>
         </div>
     <% } %>
-
-    <div class="bikesled-component">
-        <h3>Output: </h3>
-    </div>
-    <div>
-        <%= output %>
-    </div>
 </section>
